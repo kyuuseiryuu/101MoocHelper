@@ -1,0 +1,31 @@
+{
+  "name":"福软Mooc助手",
+  "manifest_version": 2,
+  "version":"1.0",
+  "description":"福软Mooc助手",
+  "icons":{
+    "16":"image/101mooc16.png",
+    "48":"image/101mooc48.png",
+    "128":"image/101mooc128.png"
+  },
+  "background":{
+    "page":"background.html"
+  },
+  "browser_action":{
+    "default_icon":"image/101mooc16.png",
+    "default_title":"Mooc Helper",
+    "default_popup":"popup.html"
+  },
+  "content_scripts":[{
+    "all_frames":true,
+    "js":["core1.1.js","jq3.1.min.js"],
+    "matches":["http://*.101.com/study/learning/*"],
+    "run_at": "document_end"
+    }],
+  "permissions":[
+    "https://*.101.com/study/learning/*",
+    "contextMenus",
+    "tabs",
+    "notifications"
+  ]
+}
