@@ -35,19 +35,12 @@ var helper = {
   //关于文档课件的相关函数
   document:{
     getPageSize:function(){
-      return parseInt($("span.pageindex").children[$("span.pageindex").children.length-1].innerHTML);
+      return +$("span.pageindex").children("span")[1].innerHTML
     },
 
     readDoc:function(){
       var length = helper.document.getPageSize();
-      for(var i = 0;i<4*length;i++){
-        try{
-          $(".i-doc-next").click(0);
-        }catch(e){
-
-        }
-
-      }
+      $(".minimap-item-bg")[length-1].click();
     }
   },
 
@@ -83,6 +76,8 @@ var helper = {
     if(helper.nextChapter().length==1){
       return helper.nextChapter().find("a")[0];
     }
+  },
+  canNext:function(){
+    return $(".active.full")[0] != undefined
   }
-
 }
