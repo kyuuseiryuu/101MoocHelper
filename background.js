@@ -1,8 +1,11 @@
 function newNotification(notification){
-  new Notification(notification.title,{
+  var msg = new Notification(notification.title,{
     icon:"image/101mooc48.png",
     body:notification.body
   })
+  setTimeout(function(){
+    msg.close()
+  },1000)
 }
 
 
