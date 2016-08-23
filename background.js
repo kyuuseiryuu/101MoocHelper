@@ -5,7 +5,7 @@ function newNotification(notification){
   })
   setTimeout(function(){
     msg.close()
-  },1000)
+  },5000)
 }
 
 
