@@ -1,7 +1,7 @@
 {
   "name":"福软Mooc助手",
   "manifest_version": 2,
-  "version":"1.0",
+  "version":"2.0",
   "description":"福软Mooc助手",
   "icons":{
     "16":"image/101mooc16.png",
@@ -18,7 +18,7 @@
   },
   "content_scripts":[{
     "all_frames":true,
-    "js":["jq3.1.min.js","helper/core1.1.js","helper/main.js"],
+    "js":["jq3.1.min.js","helper/core2.0.js","helper/main.js"],
     "matches":["http://*.101.com/study/learning/*"],
     "run_at": "document_end"
     }],
