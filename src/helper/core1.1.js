@@ -23,7 +23,7 @@ var helper = {
         }
     },
     getSeconds:function(){
-      var t = helper.video.getTimeString().split(":");
+      var t = this.video.getTimeString().split(":");
       var len = t.length;
       var h = parseInt(t[len-3]);
       var m = parseInt(t[len-2]);
@@ -39,7 +39,7 @@ var helper = {
     },
 
     readDoc:function(){
-      var length = helper.document.getPageSize();
+      var length = this.document.getPageSize();
       $(".minimap-item-bg")[length-1].click();
     }
   },
@@ -52,10 +52,10 @@ var helper = {
     return $("ul.clearfix li.active").find("em")[0].innerHTML;
   },
   getCourseType:function(){
-    return helper.video.getSeconds()==0?{"type":"document"}:{"type":"video"}
+    return this.video.getSeconds()==0?{"type":"document"}:{"type":"video"}
   },
   isCompleted:function(){
-    return $(".active.full") != undefined;
+    return $(".active.full")[0] != undefined;
   },
   nextSection:function(){
     return $("dd.active").next();
@@ -67,17 +67,17 @@ var helper = {
     return $("dd.active").parent().next();
   },
   getNextElement:function(){
-    if(helper.nextResource().length==1){
-      return helper.nextResource().find("a")[0];
+    if(this.nextResource().length==1){
+      return this.nextResource().find("a")[0];
     }
-    if(helper.nextSection().length==1){
-      return helper.nextSection().find("a")[0];
+    if(this.nextSection().length==1){
+      return this.nextSection().find("a")[0];
     }
-    if(helper.nextChapter().length==1){
-      return helper.nextChapter().find("a")[0];
+    if(this.nextChapter().length==1){
+      return this.nextChapter().find("a")[0];
     }
   },
   canNext:function(){
-    return $(".active.full")[0] != undefined
+    return this.getNextElement() != undefined
   }
 }
