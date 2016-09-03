@@ -1,7 +1,7 @@
 {
   "name":"福软Mooc助手",
   "manifest_version": 2,
-  "version":"2.0",
+  "version":"2.1",
   "description":"福软Mooc助手",
   "icons":{
     "16":"image/101mooc16.png",

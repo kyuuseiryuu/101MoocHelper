@@ -58,5 +58,9 @@ function start(){
 
 
 $(document).ready(function(){
+  showNotification({
+    title:"自动播放已就绪\n请勿关闭本页面",
+    body:"每节课等待10s页面缓冲后将开始挂机（该提示只出现一次）"
+  })
   start()
 })
