@@ -8,11 +8,18 @@ function newNotification(notification){
   },5000)
 }
 
+function excute(request){
+  switch (request.fname) {
+    case "newNotification":
+      newNotification(request.notification)
+      break;
+    default:
+  }
+}
+
 
 chrome.extension.onRequest.addListener(
   function(request,sender,response){
-    if(request.fname == "newNotification"){
-      newNotification(request.notification)
-    }
+    excute(request)
   }
 )

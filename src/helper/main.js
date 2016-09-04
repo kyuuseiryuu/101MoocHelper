@@ -1,4 +1,11 @@
-var helper = new FRMoocHelper()
+var helper = new FRMoocHelper(5)
+
+
+chrome.extension.sendRequest({
+  fname:"start"
+})
+
+
 function showClassInfo(){
   showNotification({
     title:"正在播放："+helper.getCourseName(),
@@ -53,14 +60,18 @@ function run(){
 function start(){
   setTimeout(function () {
     run()
-  }, 10*1000);
+  }, helper.waitTime*1000);
 }
 
-
-$(document).ready(function(){
+function init(){
   showNotification({
     title:"自动播放已就绪\n请勿关闭本页面",
-    body:"每节课等待10s页面缓冲后将开始挂机（该提示只出现一次）"
+    body:"每节课等待"+helper.waitTime+"s页面缓冲后将开始挂机"
   })
   start()
+}
+/*
+$(document).ready(function(){
+  init()
 })
+*/

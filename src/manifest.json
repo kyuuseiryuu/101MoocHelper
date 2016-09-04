@@ -1,8 +1,8 @@
 {
   "name":"福软Mooc助手",
   "manifest_version": 2,
-  "version":"2.1",
-  "description":"福软Mooc助手",
+  "version":"2.1.1",
+  "description":"Mooc一键挂机，睡一觉就全部刷完啦！",
   "icons":{
     "16":"image/101mooc16.png",
     "48":"image/101mooc48.png",
@@ -18,7 +18,7 @@
   },
   "content_scripts":[{
     "all_frames":true,
-    "js":["jq3.1.min.js","helper/core2.0.js","helper/main.js"],
+    "js":["jq3.1.min.js","helper/core2.0.js","helper/main.js","helper/injection.js"],
     "matches":["http://*.101.com/study/learning/*"],
     "run_at": "document_end"
     }],
