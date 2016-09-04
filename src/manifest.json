@@ -13,12 +13,12 @@
   },
   "browser_action":{
     "default_icon":"image/101mooc16.png",
-    "default_title":"Mooc Helper",
+    "default_title":"福软Mooc助手",
     "default_popup":"popup.html"
   },
   "content_scripts":[{
     "all_frames":true,
-    "js":["jq3.1.min.js","helper/core2.0.js","helper/main.js","helper/injection.js"],
+    "js":["jq3.1.min.js","helper/core2.1.js","helper/main.js","helper/injection.js"],
     "matches":["http://*.101.com/study/learning/*"],
     "run_at": "document_end"
     }],
